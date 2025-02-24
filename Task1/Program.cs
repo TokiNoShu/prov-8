@@ -38,7 +38,7 @@ namespace Task1
                     };
                     foreach (var a in calculator2s)
                     {
-                            Console.WriteLine($"Число {a.} среднее.");
+                            Console.WriteLine($"Число {a.CalculateA()} среднее.");
                     }
                     break;
 

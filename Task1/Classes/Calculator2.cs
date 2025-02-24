@@ -1,30 +1,33 @@
 ﻿using System;
+using System.Runtime.Remoting.Lifetime;
+using System.Security.Cryptography;
 
 namespace Classes
 {
     public class Calculator2
     {
-        public double A;
-        public double B;
-        public double C;
+        double A { get; set; }
+        double B { get; set; }
+        double C { get; set; }
 
-        public Calculator2(double a, double b)
+        public Calculator2(double a, double b, double c)
         {
             A = a;
             B = b;
-            if (A >= 2 && A < 5)
-                C = 0.02;
-            else if (A >= 5 && A <= 10)
-                C = 0.05;
-            else C = 1;
+            C = c;
         }
         public double CalculateA()
         {
-            return C;
-        }
-        public double CalculateB() 
-        {
-            return A + (A * C);
+            double[] nums = { A, B, C };
+            double bigger = nums[0];
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (i > bigger)
+                {
+                    bigger = i;
+                }
+            }
+            return bigger;
         }
     }
 }
