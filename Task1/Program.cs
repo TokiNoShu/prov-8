@@ -31,155 +31,144 @@ namespace Task1
 
                 case 2:
                     Calculator2[] calculator2s =
-{
+                    {
                         new Calculator2(3, 3.5, -2.1),
                         new Calculator2(2.1, -6.55, 0.1),
                         new Calculator2(-9, -3.7, -0.1)
                     };
                     foreach (var a in calculator2s)
-                    {
                             Console.WriteLine($"Число {a.CalculateA()} среднее.");
-                    }
                     break;
 
-                case 3:
-                    Console.WriteLine("Введите координату Ax:");
-                    ax = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите координату Ay:");
-                    ay = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите координату Bx:");
-                    bx = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите координату By:");
-                    by = Convert.ToDouble(Console.ReadLine());
-
-
-                    Calculator3 calculator3 = new Calculator3(ax, ay, bx, by);
-                    if (calculator3.CalculateA()) Console.WriteLine("Точка A раполагается на более удалённом расстоянии");
+/*                case 3:
+                    Calculator3[] calculator3s =
+{
+                        new Calculator3(2, 1.5),
+                        new Calculator3(-0.5, 2.3),
+                        new Calculator3(1.5, -0.8)
+                    };
+                    foreach (var a in calculator3s)
+                        if (a.CalculateA()) Console.WriteLine("Точка A раполагается на более удалённом расстоянии");
                     else Console.WriteLine("Точка B раполагается на более удалённом расстоянии");
-                    break;
+                    break;*/
 
                 case 4:
-                    Console.WriteLine("Введите значение стороны треугольника А:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите значение стороны треугольника B:");
-                    b = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите значение стороны треугольника C:");
-                    c = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator4 calculator4 = new Calculator4(a, b, c);
-                    if (calculator4.CalculateA()) Console.WriteLine("Треугольник ABC является треугольником");
-                    else Console.WriteLine("Треугольник ABC не является треугольником");
+                    Calculator4[] calculator4s =
+{
+                        new Calculator4(3, 3.5, -2.1),
+                        new Calculator4(21, -6.55, 0.1),
+                        new Calculator4(-9, -3.7, -0.1)
+                    };
+                    foreach (var a in calculator4s)
+                        if (a.CalculateA())
+                            Console.WriteLine("Треугольник ABC является треугольником");
+                        else Console.WriteLine("Треугольник ABC не является треугольником");
                     break;
 
                 case 5:
-                    Console.WriteLine("Введите первое число:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите второе число:");
-                    b = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите третье число:");
-                    c = Convert.ToDouble(Console.ReadLine());
-                    Calculator5 calculator5 = new Calculator5(a, b, c);
-                    double[] arr = calculator5.CalculateA();
-                    Console.WriteLine("Ваши числа после изменения:");
-                    foreach (int i in arr) Console.Write(i + ", ");
+                    Console.WriteLine("Введите номер месяца");
+                    int months = Convert.ToInt16(Console.ReadLine());
+                    Calculator5 calculator5 = new Calculator5(months);
+                    Console.WriteLine(calculator5.CalculateA());
                     break;
 
                 case 6:
-                    Console.WriteLine("Введите координату Ax:");
-                    ax = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите координату Ay:");
-                    ay = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator6 calculator6 = new Calculator6(ax, ay);
-                    Console.WriteLine($"Точка А находится в {calculator6.CalculateA()} четверти");
+                    Calculator6[] calculator6s =
+{
+                        new Calculator6(-3, 3.5, 0.1),
+                        new Calculator6(58, 27, -87),
+                        new Calculator6(-8, -3.7, -0.1)
+                    };
+                    double[] nums = { 1, 2, 3 };
+                    foreach (var a in calculator6s)
+                        nums = a.CalculateA();
+                        for (int i = 0; i < nums.Length; i++)
+                        {
+                            Console.WriteLine(nums[i]);
+                        }
+                        
                     break;
 
                 case 7:
-                    Console.WriteLine("Введите координату Ax:");
-                    ax = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите координату Ay:");
-                    ay = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите радиус окружности:");
-                    r = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator7 calculator7 = new Calculator7(ax, ay, r);
-                    if (calculator7.CalculateA()) Console.WriteLine("Точка А лежит внутри окружности");
-                    else Console.WriteLine("Точка А не лежит внутри окружности");
+                    Calculator7[] calculator7s =
+                    {
+                        new Calculator7(2, 2, -4, 0),
+                        new Calculator7(8, 9, 12, 1),
+                        new Calculator7(-3.5, 0.9, 2, 3)
+                    };
+                    foreach (var a in calculator7s)
+                        if (a.CalculateA()) Console.WriteLine("Точка А больше удалена");
+                        else Console.WriteLine("Точка B больше удалена");
                     break;
 
                 case 8:
-                    Console.WriteLine("Введите сторону A первого треугольника:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите сторону B первого треугольника:");
-                    b = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите сторону C первого треугольника:");
-                    c = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите сторону A второго треугольника:");
-                    a1 = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите сторону B второго треугольника:");
-                    b1 = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите сторону C второго треугольника:");
-                    c1 = Convert.ToDouble(Console.ReadLine());
+                    Calculator8[] calculator8s =
+                    {
+                        new Calculator8(3, 3.5, 1.1),
+                        new Calculator8(3, 6.55, 6.55),
+                        new Calculator8(0.9, 0.9, 0.9)
+                    };
 
-
-                    Calculator8 calculator8 = new Calculator8(a, b, c, a1, b1, c1);
-                    if (calculator8.CalculateA()) Console.WriteLine("Площадь первого треугольника больше площади второго");
-                    else Console.WriteLine("Площадь второго треугольника больше площади первого");
+                    foreach (var a in calculator8s)
+                        if (a.CalculateA()) Console.WriteLine("Равнобедренный");
+                        else Console.WriteLine("Неравнобедренный");
                     break;
 
                 case 9:
-                    Console.WriteLine("Введите сторону квадрата:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите радиус круга:");
-                    r = Convert.ToDouble(Console.ReadLine());
+                    Calculator9[] calculator9s =
+                    {
+                        new Calculator9(50, 0.1, Convert.ToDouble(Console.ReadLine()), Convert.ToDouble(Console.ReadLine())),
+                        new Calculator9(2.45, 0.08, Convert.ToDouble(Console.ReadLine()), Convert.ToDouble(Console.ReadLine())),
+                        new Calculator9(3.55, 0.12, Convert.ToDouble(Console.ReadLine()), Convert.ToDouble(Console.ReadLine()))
+                    };
 
-                    Calculator9 calculator9 = new Calculator9(a, r);
-                    if (calculator9.CalculateA()) Console.WriteLine("Площадь квадрата больше, чем площадь круга");
-                    else Console.WriteLine("Площадь круга больше, чем площадь квадрата");
+                    foreach (var a in calculator9s)
+                        Console.WriteLine($"Цена разговора за написанные дни: {a.CalculateA()}");
                     break;
 
                 case 10:
-                    Console.WriteLine("Введите первое число:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите второе число:");
-                    b = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите третье число:");
-                    c = Convert.ToDouble(Console.ReadLine());
-                    Calculator10 calculator10 = new Calculator10(a, b, c);
-                    arr = calculator10.CalculateA();
-                    Console.WriteLine("Ваши числа после изменения:");
-                    foreach (int i in arr) Console.Write(i + ", ");
+                    Console.WriteLine("Введите номер:");
+                    int otkritka = Convert.ToInt16(Console.ReadLine());
+                    Console.WriteLine("Введите вариант (a, b, c):");
+                    string variant = Console.ReadLine();
+                    Calculator10 calculator10 = new Calculator10(otkritka, variant);
+                    Console.WriteLine(calculator10.CalculateA());
                     break;
 
                 case 11:
-                    Console.WriteLine("Введите натуральное число");
-                    int ai = Convert.ToInt32(Console.ReadLine());
-
-                    Calculator11 calculator11 = new Calculator11(ai);
-                    if (calculator11.CalculateA() == 1) Console.WriteLine("Число является четным");
-                    else if (calculator11.CalculateA() == 2) Console.WriteLine("Число оканчивается на 3");
-                    else Console.WriteLine("Число не является натуральным или не является четным, или не оканчивается на три");
-                    break;
+                    Calculator11[] calculator11s =
+                    {
+                        new Calculator11(-3, 3.5),
+                        new Calculator11(5.8, 2.7),
+                        new Calculator11(-8, -3.5)
+                    };
+                    foreach (var a in calculator11s)
+                        Console.WriteLine(a.CalculateA());
+                        break;
 
                 case 12:
-                    Console.WriteLine("Введите координату Ax:");
-                    ax = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите координату Ay:");
-                    ay = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator12 calculator12 = new Calculator12(ax, ay);
-                    if (calculator12.CalculateA()) Console.WriteLine("Данная точка лежит в первой четверти");
-                    else Console.WriteLine("Данная точка не лежит в первой четверти");
+                    Calculator12[] calculator12s =
+                    {
+                        new Calculator12(45, 13, -23),
+                        new Calculator12(-31, 65, 12),
+                        new Calculator12(52, -1, -33)
+                    };
+                    foreach (var a in calculator12s)
+                        Console.WriteLine(a.CalculateA());
                     break;
 
                 case 13:
-                    Console.WriteLine("Введите срок договора:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите сумму вклада:");
-                    b = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator13 calculator13 = new Calculator13(a, b);
-                    Console.WriteLine($"Сумма ежемесячных выплат по депозиту: {calculator13.CalculateA()}");
+                    Calculator13[] calculator13s =
+                    {
+                        new Calculator13(3.2, -7, 0.5),
+                        new Calculator13(2.3, 3, 2.5),
+                        new Calculator13(23, -34, 89.5)
+                    };
+                    double[] middleNums = { };
+                    foreach (var a in calculator13s)
+                        middleNums = a.CalculateA();
+                        for (int i = 0; i < middleNums.Length; i++)
+                            Console.WriteLine(middleNums[i]);
                     break;
 
                 case 14:

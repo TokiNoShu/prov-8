@@ -4,20 +4,22 @@ namespace Classes
 {
     public class Calculator7
     {
-        public double AX { get; set; }
-        public double AY { get; set; }
-        public double R { get; set; }
+        public double X0 { get; set; }
+        public double Y0 { get; set; }
+        public double X1 { get; set; }
+        public double Y1 { get; set; }
 
 
-        public Calculator7(double ax, double ay, double r)
+        public Calculator7(double x0, double y0, double x1, double y1)
         {
-            AX = ax;
-            AY = ay;
-            R = r;
+            X0 = x0;
+            Y0 = y0;
+            X1 = x1;
+            Y1 = y1;
         }
         public bool CalculateA()
         {
-            return AX < R && AX > -R && AY < R && AY > -R;
+            return Math.Abs(X0 + Y0) > Math.Abs(X1 + Y1);
         }
     }
 }

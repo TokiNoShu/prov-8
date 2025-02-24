@@ -2,20 +2,28 @@
 {
     public class Calculator12
     {
-        public double AX { get; set; }
-        public double AY { get; set; }
+        public double A { get; set; }
+        public double B { get; set; }
+        public double C { get; set; }
 
-
-
-
-        public Calculator12(double ax, double ay)
+        public Calculator12(double a, double b, double c)
         {
-            AX = ax; 
-            AY = ay;
+            A = a; 
+            B = b;
+            C = c;
         }
-        public bool CalculateA()
+        public double CalculateA()
         {
-            return AX > 0 && AY > 0;
+            double minimum = A;
+            double[] nums = { A, B, C };
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (minimum < i)
+                {
+                    minimum = nums[i];
+                }
+            }
+            return minimum;
         }
     }
 }

@@ -2,27 +2,25 @@
 {
     public class Calculator11
     {
-        public int AI { get; set; }
+        public double A { get; set; }
+        public double B { get; set; }
 
-        public Calculator11(int ai)
+
+        public Calculator11(double a, double b)
         {
-            AI = ai;
+            A = a;
+            B = b;
         }
-        public double CalculateA()
+        public double[] CalculateA()
         {
-            if (AI > 0) 
+            if (A > 0 && B < 0)
             {
-                if (AI % 2 == 0)
-                {
-                    return 1;
-                }
-                else if (AI % 10 == 3)
-                {
-                    return 2;
-                }
-                else return 0;
+                A *= -1;
+                B *= -1;
             }
-            else return 0;
+            else A *= 0; B *= 0;
+            double[] nums = { A, B};
+            return nums;
         }
     }
 }

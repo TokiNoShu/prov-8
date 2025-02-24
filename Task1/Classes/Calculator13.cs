@@ -8,22 +8,23 @@ namespace Classes
         public double B;
         public double C;
 
-        public Calculator13(double a, double b)
+        public Calculator13(double a, double b, double c)
         {
             A = a;
             B = b;
-            if (A >= 6 && A < 12)
-            {
-                C = 1 + 0.6/12;
-            }
-            else if(A >= 12)
-            {
-                C = 1 + 0.6/12;
-            }
+            C = c;
         }
-        public double CalculateA()
+        public double[] CalculateA()
         {
-            return (B * C - B) * A;
+            double[] middleNums = { };
+            double middle = (A + B + C) / 3;
+            double[] nums = { A, B, C };
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (i > middle)
+                    middleNums[i] = nums[i];
+            }
+            return middleNums;
         }
     }
 }
