@@ -12,7 +12,7 @@ namespace Task1
             Console.WriteLine("Введите номер задания от 1 до 30:");
             int sm = Convert.ToInt32(Console.ReadLine());
 
-            double x1, x2, x3, y1, y2, y3;
+            double x1, x2, x3, y1, y2, y3, a1, a2, a3, b1, b2, b3, c1, c2, c3;
 
             switch (sm)
             {
