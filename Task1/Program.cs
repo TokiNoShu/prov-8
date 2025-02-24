@@ -12,7 +12,7 @@ namespace Task1
             Console.WriteLine("Введите номер задания от 1 до 30:");
             int sm = Convert.ToInt32(Console.ReadLine());
 
-            double x1, x2, x3, y1, y2, y3, a1, a2, a3, b1, b2, b3, c1, c2, c3;
+            double x1, x2, x3, y1, y2, y3, a1, a2, a3, a4, b1, b2, b3, b4, c1, c2, c3, fi1, fi2, fi3, lambda1, lambda2, lambda3, r11, r12, r13, r21, r22, r23, r31, r32, r33, om1, om2, om3;
 
             switch (sm)
             {
@@ -201,194 +201,368 @@ namespace Task1
                     break;
 
                 case 15:
-                    Console.WriteLine("Введите координату Ax:");
-                    ax = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите координату Ay:");
-                    ay = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите координату Bx:");
-                    bx = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите координату By:");
-                    by = Convert.ToDouble(Console.ReadLine());
-
-
-                    Calculator15 calculator15 = new Calculator15(ax, ay, bx, by);
-                    if (calculator15.CalculateA()) Console.WriteLine("Точка A раполагается на более удалённом расстоянии");
-                    else Console.WriteLine("Точка B раполагается на более удалённом расстоянии");
+                    x1 = -2.2;
+                    x2 = 5.3;
+                    x3 = -0.8;
+                    y1 = -6;
+                    y2 = 3;
+                    y3 = -4;
+                    Calculator15[] calculator15s =
+                    {
+                        new Calculator15(x1, y1),
+                        new Calculator15(x2, y2),
+                        new Calculator15(x3, y3)
+                    };
+                    foreach (var a in calculator15s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в четвертой четверти.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в четвертой четверти.");
+                    }
                     break;
 
                 case 16:
-                    Console.WriteLine("Введите координату Ax:");
-                    ax = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите координату Ay:");
-                    ay = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите радиус окружности:");
-                    r = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите радиус окружности:");
-                    r1 = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator16 calculator16 = new Calculator16(ax, ay, r, r1);
-                    if (calculator16.CalculateA()) Console.WriteLine("Данная точка лежит в окружности тора");
-                    else Console.WriteLine("Данная точка не лежит в окружности тора");
+                    a1 = 3;
+                    a2 = 3;
+                    a3 = 9;
+                    b1 = 5;
+                    b2 = 8;
+                    b3 = 9;
+                    c1 = 4;
+                    c2 = 11;
+                    c3 = 9;
+                    Calculator16[] calculator16s =
+                    {
+                        new Calculator16(a1, b1, c1),
+                        new Calculator16(a2, b2, c2),
+                        new Calculator16(a3, b3, c3)
+                    };
+                    foreach (var a in calculator16s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 17:
-                    Console.WriteLine("Введите координату Ax:");
-                    ax = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите координату Ay:");
-                    ay = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator17 calculator17 = new Calculator17(ax, ay);
-                    if (calculator17.CalculateA()) Console.WriteLine("Данная точка лежит в 4 четверти");
-                    else Console.WriteLine("Данная точка не лежит в 4 четверти");
+                    a1 = 9;
+                    a2 = 7;
+                    a3 = 0.1;
+                    b1 = 2;
+                    b2 = -3;
+                    b3 = 4;
+                    Calculator17[] calculator17s =
+                    {
+                        new Calculator17(a1, b1),
+                        new Calculator17(a2, b2),
+                        new Calculator17(a3, b3)
+                    };
+                    foreach (var a in calculator17s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
-                case 18:
-                    Console.WriteLine("Введите значение стороны треугольника А:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите значение стороны треугольника B:");
-                    b = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите значение стороны треугольника C:");
-                    c = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator18 calculator18 = new Calculator18(a, b, c);
-                    if (calculator18.CalculateA()) Console.WriteLine("Треугольник ABC является равнобедренным");
-                    else Console.WriteLine("Треугольник ABC не является равнобедренным");
+                case 18: //хз как делать
+                    x1 = 3.5;
+                    x2 = -0.5;
+                    x3 = 0.72;
+                    y1 = 7.2;
+                    y2 = 1.2;
+                    y3 = -3.12;
+                    Calculator18[] calculator18s =
+                    {
+                        new Calculator18(x1, y1),
+                        new Calculator18(x2, y2),
+                        new Calculator18(x3, y3)
+                    };
+                    foreach (var a in calculator18s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 19:
-                    Console.WriteLine("Введите первое число:");
-                    ai = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Введите второе число:");
-                    int bi = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Введите третье число:");
-                    int ci = Convert.ToInt32(Console.ReadLine());
-                    Calculator19 calculator19 = new Calculator19(ai, bi, ci);
-                    if (calculator19.CalculateA()) Console.WriteLine("Данные числа являются тройкой пифагора");
-                    else Console.WriteLine("Данные числа не являются тройкой пифагора");
+                    fi1 = 30;
+                    fi2 = -15;
+                    fi3 = 87;
+                    lambda1 = 121;
+                    lambda2 = 50;
+                    lambda3 = 223;
+                    Calculator19[] calculator19s =
+                    {
+                        new Calculator19(fi1, lambda1),
+                        new Calculator19(fi2, lambda2),
+                        new Calculator19(fi3, lambda3)
+                    };
+                    foreach (var a in calculator19s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 20:
-                    a = 1;
-                    b = 10;
+                    a1 = 3;
+                    a2 = 3;
+                    a3 = 0.9;
+                    b1 = 3.5;
+                    b2 = 6.55;
+                    b3 = 0.9;
+                    c1 = 1.5;
+                    c2 = 6.55;
+                    c3 = 0.9;
 
-                    Calculator20 calculator20 = new Calculator20(a, b);
-                    Console.WriteLine($"Объёмная скорость 1: {a} л/с = {calculator20.LiterSpeed():F6} м³/с");
-                    Console.WriteLine($"Объёмная скорость 2: {b} м³/мин = {calculator20.MeterSpeed():F6} м³/с");
-                    if (calculator20.CalculateA()) Console.WriteLine("Первая объёмная скорость больше");
-                    else Console.WriteLine("Вторая объёмная скорость больше");
+                    Calculator20[] calculator20s =
+                    {
+                        new Calculator20(a1, b1, c1),
+                        new Calculator20(a2, b2, c2),
+                        new Calculator20(a3, b3, c3)
+                    };
+                    foreach (var a in calculator20s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 21:
-                    Console.WriteLine("Введите сторону квадрата:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите радиус круга:");
-                    r = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator21 calculator21 = new Calculator21(a, r);
-                    if (calculator21.CalculateA()) Console.WriteLine("Круг уместится в квадрате");
-                    else Console.WriteLine("Квадрат уместится в круге");
+                    a1 = -13;
+                    a2 = -5.8;
+                    a3 = 8;
+                    b1 = -3.5;
+                    b2 = 37;
+                    b3 = 0.9;
+                    Calculator21[] calculator21s =
+                    {
+                        new Calculator21(a1, b1),
+                        new Calculator21(a2, b2),
+                        new Calculator21(a3, b3)
+                    };
+                    foreach (var a in calculator21s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 22:
-                    Console.WriteLine("Введите массу первого объекта:");
-                    m = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите объём первого объекта:");
-                    v = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите массу второго объекта:");
-                    m1 = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите объём второго объекта:");
-                    v1 = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator22 calculator22 = new Calculator22(m, v, m1, v1);
-                    if (calculator22.CalculateA()) Console.WriteLine("Плотность первого тела больше, чем плотность второго тела");
-                    else Console.WriteLine("Плотность второго тела больше, чем плотность первого");
+                    a1 = 15;
+                    a2 = -38;
+                    a3 = 22;
+                    b1 = 13;
+                    b2 = 25;
+                    b3 = -1;
+                    c1 = -33;
+                    c2 = 12;
+                    c3 = -15;
+                    Calculator22[] calculator22s =
+                    {
+                        new Calculator22(a1, b1, c1),
+                        new Calculator22(a2, b2, c2),
+                        new Calculator22(a3, b3, c3)
+                    };
+                    foreach (var a in calculator22s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 23:
-                    Console.WriteLine("Введите скорость в км/ч:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите скорость в м/сек:");
-                    b = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator23 calculator23 = new Calculator23(a, b);
-                    if (calculator23.CalculateA()) Console.WriteLine("Скорость в км/ч больше, чем скорость в м/сек");
-                    else Console.WriteLine("Скорость в м/сек больше, чем скорость в км/ч");
+                    a1 = 10;
+                    a2 = 76;
+                    a3 = 11;
+                    b1 = 34;
+                    b2 = 5;
+                    b3 = 75;
+                    c1 = 65;
+                    c2 = 55;
+                    c3 = 20;
+                    Calculator23[] calculator23s =
+                    {
+                        new Calculator23(a1, b1, c1),
+                        new Calculator23(a2, b2, c2),
+                        new Calculator23(a3, b3, c3)
+                    };
+                    foreach (var a in calculator23s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 24:
-                    Console.WriteLine("Введите сторону равностороннего треугольника:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите радиус круга:");
-                    r = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator24 calculator24 = new Calculator24(a, r);
-                    if (calculator24.CalculateA()) Console.WriteLine("Круг уместится в треугольнике");
-                    else Console.WriteLine("Треугольник уместится в круге");
+                    a1 = 10;
+                    a2 = 76;
+                    a3 = 11;
+                    b1 = 34;
+                    b2 = 5;
+                    b3 = 75;
+                    c1 = 65;
+                    c2 = 55;
+                    c3 = 20;
+                    Calculator24[] calculator24s =
+                    {
+                        new Calculator24(a1, b1, c1),
+                        new Calculator24(a2, b2, c2),
+                        new Calculator24(a3, b3, c3)
+                    };
+                    foreach (var a in calculator24s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 25:
-                    Console.WriteLine("Введите сопротивление 1 участка:");
-                    r = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите напряжение 1 участка:");
-                    u = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите сопротивление 2 участка:");
-                    r1 = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите напряжение 2 участка:");
-                    u1 = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator25 calculator25 = new Calculator25(r, u, r1, u1);
-                    if (calculator25.CalculateA()) Console.WriteLine("Меньший ток течёт по первому участку");
-                    else Console.WriteLine("Меньший ток течёт по второму участку");
+                    a1 = 10;
+                    a2 = 76;
+                    a3 = 11;
+                    b1 = 34;
+                    b2 = 5;
+                    b3 = 75;
+                    c1 = 65;
+                    c2 = 55;
+                    c3 = 20;
+                    Calculator25[] calculator25s =
+                    {
+                        new Calculator25(a1, b1, c1),
+                        new Calculator25(a2, b2, c2),
+                        new Calculator25(a3, b3, c3)
+                    };
+                    foreach (var a in calculator25s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 26:
-                    mv = 4.86 * Math.Pow(10, 27);
-                    rv = 6175;
-                    ms = 5.68 * Math.Pow(10, 29);
-                    rs = 57750;
-                    Calculator26 calculator26 = new Calculator26(mv, rv, ms, rs);
-                    if (calculator26.CalculateA()) Console.WriteLine("у Венеры наибольшее ускорение силы тяжести");
-                    else Console.WriteLine("у Сатурна наибольшее ускорение силы тяжести");
+                    a1 = 56;
+                    a2 = 47;
+                    a3 = 29;
+                    a4 = 19;
+                    b1 = 38;
+                    b2 = 91;
+                    b3 = 76;
+                    b4 = 53;
+                    Calculator26[] calculator26s =
+                    {
+                        new Calculator26(a1, b1),
+                        new Calculator26(a2, b2),
+                        new Calculator26(a3, b3),
+                        new Calculator26(a4, b4)
+                    };
+                    foreach (var a in calculator26s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 27:
-                    Console.WriteLine("Введите текущий час в двадцатичетрехчасовом формате");
-                    a = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator27 calculator27 = new Calculator27(a);
-                    if (calculator27.CalculateA() == 0) Console.WriteLine("Время не может быть больше 24 или меньше 0");
-                    else if (calculator27.CalculateA() == 1) Console.WriteLine("Сейчас время от полуночи до полудня(PM)");
-                    else Console.WriteLine("Сейчас время от полудня до полуночи(AM)");
+                    a1 = 36;
+                    a2 = 41;
+                    a3 = 39;
+                    a4 = 29;
+                    b1 = 78;
+                    b2 = 81;
+                    b3 = 76;
+                    b4 = 53;
+                    Calculator27[] calculator27s =
+                    {
+                        new Calculator27(a1, b1),
+                        new Calculator27(a2, b2),
+                        new Calculator27(a3, b3),
+                        new Calculator27(a4, b4)
+                    };
+                    foreach (var a in calculator27s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 28:
-                    Console.WriteLine("Введите долготу:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите широту:");
-                    b = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator28 calculator28 = new Calculator28(a);
-                    if (calculator28.CalculateA()) Console.WriteLine("Данная координата находится в восточном полушарии");
-                    else Console.WriteLine("Данная координата находится в западном полушарии");
+                    r11 = 5;
+                    r12 = 3;
+                    r13 = 4;
+                    r21 = 10;
+                    r22 = 5;
+                    r23 = 6;
+                    r31 = 2;
+                    r32 = 7;
+                    r33 = 8;
+                    Calculator28[] calculator28s =
+                    {
+                        new Calculator28(r11, r12, r13),
+                        new Calculator28(r21, r22, r23),
+                        new Calculator28(r31, r32, r33)
+                    };
+                    foreach (var a in calculator28s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 29:
-                    a = 8.14 * Math.Pow(10, 12);
-                    b = 103;
+                    om1 = 5;
+                    om2 = 30;
+                    om3 = 800;
+                    a1 = 2;
+                    a2 = 4;
+                    a3 = 6;
 
-                    Calculator29 calculator29 = new Calculator29(a, b);
-                    if (calculator29.CalculateA()) Console.WriteLine("Сириус ближе чем Арктур");
-                    else Console.WriteLine("Арктур ближе чем Сириус");
+                    Calculator29[] calculator29s =
+                    {
+                        new Calculator29(om1, a1),
+                        new Calculator29(om2, a2),
+                        new Calculator29(om3, a3)
+                    };
+                    foreach (var a in calculator29s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 30:
-                    Console.WriteLine("Введите натуральное число:");
-                    ai = Convert.ToInt32(Console.ReadLine());
-
-                    Calculator30 calculator30 = new Calculator30(ai);
-                    if (calculator30.CalculateA() == 1) Console.WriteLine("Число является четным");
-                    else if (calculator30.CalculateA() == 2) Console.WriteLine("Число оканчивается на 7");
-                    else Console.WriteLine("Число не является натуральным или не является четным, или не оканчивается на 7");
+                    x1 = 3.5;
+                    x2 = -0.5;
+                    x3 = 0.72;
+                    y1 = 7.2;
+                    y2 = 1.2;
+                    y3 = -3.12;
+                    Calculator30[] calculator30s =
+                    {
+                        new Calculator30(x1, y1),
+                        new Calculator30(x2, y2),
+                        new Calculator30(x3, y3)
+                    };
+                    foreach (var a in calculator30s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
             }
         }

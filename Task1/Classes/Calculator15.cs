@@ -1,26 +1,20 @@
-﻿using System;
-
-namespace Classes
+﻿namespace Classes
 {
     public class Calculator15
     {
-        public double AX { get; set; }
-        public double AY { get; set; }
-        public double BX { get; set; }
-        public double BY { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
 
 
-
-        public Calculator15(double ax, double ay, double bx, double by)
+        public Calculator15(double x, double y)
         {
-            AX = ax;
-            AY = ay;
-            BX = bx;
-            BY = by;
+            X = x;
+            Y = y;
+
         }
         public bool CalculateA()
         {
-            return AX + AY < BX + BY;
+            return Y >= 0 && Y <= ;
         }
     }
 }
