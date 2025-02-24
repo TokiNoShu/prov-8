@@ -10,7 +10,7 @@ namespace Classes
 
         public Calculator1(double x, double y) 
         {
-            X = y;
+            X = X;
             Y = y;
 
         }

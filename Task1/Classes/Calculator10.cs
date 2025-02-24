@@ -8,29 +8,22 @@ namespace Classes
 {
     public class Calculator10
     {
-        public double K { get; set; }
-        public double L { get; set; }
-        public double M { get; set; }
+        public int A { get; set; }
+        public string B { get; set; }
 
 
 
 
-        public Calculator10(double k, double l, double m)
+        public Calculator10(int a, string b)
         {
-            K = k;
-            L = l;
-            M = m;
+            A = a;
+            B = b;
         }
-        public double[] CalculateA()
+        public string CalculateA()
         {
-            double[] arr = { K, L, M };
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (arr[i] > 0)
-                    arr[i] = Math.Pow(arr[i], 3);
-                else arr[i] = 0;
-            }
-            return arr;
+            if (A >= 1 && A <= 3 && (B == "a" || B == "b" || B == "c"))
+                return $"открытка {A}, вариант {B}";
+            else return "номер 1-3 и вариант a, b, c";
         }
     }
 }

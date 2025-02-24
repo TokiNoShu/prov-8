@@ -4,28 +4,23 @@ namespace Classes
 {
     public class Calculator5
     {
-        public double K { get; set; }
-        public double L { get; set; }
-        public double M { get; set; }
+        public int A { get; set; }
 
-
-
-
-        public Calculator5(double k, double l, double m)
+        public Calculator5(int a)
         {
-            K = k;
-            L = l;
-            M = m;
+            A = a;
         }
-        public double[] CalculateA()
+        public string CalculateA()
         {
-            double[] arr = { K, L, M };
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (arr[i] > 0)
-                    arr[i] = Math.Pow(arr[i], 2);
-            }
-            return arr;
+            if (A >= 3 && A <= 5)
+                return "Весна";
+            else if (A >= 6 && A <= 8)
+                return "Лето";
+            else if (A >= 9 && A <= 11)
+                return "Осень";
+            else if (A == 12 || (A <= 2 && A > 0))
+                return "Зима";
+            else return "Такого месяца не существует";
         }
     }
 }

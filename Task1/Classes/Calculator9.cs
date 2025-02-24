@@ -9,16 +9,20 @@ namespace Classes
     public class Calculator9
     {
         public double A { get; set; }
-        public double R { get; set; }
+        public double B { get; set; }
+        public double C { get; set; }
+        public double D { get; set; }
 
-        public Calculator9(double a, double r)
+        public Calculator9(double a, double b, double c, double d)
         {
             A = a;
-            R = r;
+            B = b;
+            C = c;
+            D = d;
         }
-        public bool CalculateA()
+        public double CalculateA()
         {
-            return Math.Pow(A, 2) > (Math.Pow(R, 2) * Math.PI);
+            return A * C + A * B * D;
         }
     }
 }
