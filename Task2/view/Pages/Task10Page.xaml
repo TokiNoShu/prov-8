@@ -1,0 +1,62 @@
+﻿<Page x:Class="Task2.View.Pages.Task10Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Task2.View.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+
+        <StackPanel HorizontalAlignment="Center"
+            VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock
+                   FontSize="18"
+                   FontWeight="Bold" Text="Введите первое число: "/>
+                <TextBox Width="70"
+                 x:Name="TbA"
+                 FontSize="18"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                Margin="0 10 0 0">
+                <TextBlock Text="Введите второе число: "
+                   FontSize="18"
+                   FontWeight="Bold"/>
+                <TextBox Width="70"
+                 x:Name="TbB"
+                 FontSize="18"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+    Margin="0 10 0 0">
+                <TextBlock Text="Введите третье число: "
+       FontSize="18"
+       FontWeight="Bold"/>
+                <TextBox Width="70"
+     x:Name="TbC"
+     FontSize="18"/>
+            </StackPanel>
+
+            <StackPanel>
+                <Button Content="Ответ"
+        FontSize="15"
+        FontWeight="Bold"
+        Cursor="Hand"
+        x:Name="BtnTask"
+        Click="BtnTask10_Click"
+        Background="CornflowerBlue"
+        Padding="12">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
