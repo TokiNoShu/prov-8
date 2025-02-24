@@ -12,22 +12,14 @@ namespace Task1
             Console.WriteLine("Введите номер задания от 1 до 30:");
             int sm = Convert.ToInt32(Console.ReadLine());
 
-            double x1, x2, x3, y1, y2, y3, a1, a2, a3, b1, b2, b3, c1, c2, c3;
-
             switch (sm)
             {
                 case 1:
-                    x1 = 3.5;
-                    x2 = -0.5;
-                    x3 = 0.72;
-                    y1 = 7.2;
-                    y2 = 1.2;
-                    y3 = -3.12;
                     Calculator1[] calculator1s =
                     {
-                        new Calculator1(x1, y1),
-                        new Calculator1(x2, y2),
-                        new Calculator1(x3, y3)
+                        new Calculator1(3.5, 7.2),
+                        new Calculator1(-0.5, 1.2),
+                        new Calculator1(0.72, -3.12)
                     };
                     foreach (var a in calculator1s)
                     {
@@ -38,14 +30,16 @@ namespace Task1
                     break;
 
                 case 2:
-                    Console.WriteLine("Введите ваш стаж:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите вашу зарплату:");
-                    b = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator2 calculator2 = new Calculator2(a, b);
-                    Console.WriteLine($"Надбавка к зарплате: {calculator2.CalculateA()}");
-                    Console.WriteLine($"Сумма к выплате: {calculator2.CalculateB()}");
+                    Calculator2[] calculator2s =
+{
+                        new Calculator2(3, 3.5, -2.1),
+                        new Calculator2(2.1, -6.55, 0.1),
+                        new Calculator2(-9, -3.7, -0.1)
+                    };
+                    foreach (var a in calculator2s)
+                    {
+                            Console.WriteLine($"Число {} среднее.");
+                    }
                     break;
 
                 case 3:
