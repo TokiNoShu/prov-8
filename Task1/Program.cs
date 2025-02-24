@@ -1,5 +1,6 @@
 ﻿using Classes;
 using System;
+using System.Security.Cryptography;
 
 namespace Task1
 {
@@ -7,24 +8,33 @@ namespace Task1
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Практическая работа №7");
+            Console.WriteLine("Практическая работа №8");
             Console.WriteLine("Введите номер задания от 1 до 30:");
             int sm = Convert.ToInt32(Console.ReadLine());
 
-            double a, b, c, ax, ay, bx, by, r, a1, b1, c1, r1, m, v, m1, v1, u, u1, mv, rv, ms, rs;
+            double x1, x2, x3, y1, y2, y3;
 
             switch (sm)
             {
                 case 1:
-                    Console.WriteLine("Введите значение А:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите значение B:");
-                    b = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator1 calculator1 = new Calculator1(a, b);
-                    if (calculator1.CalculateA())
-                        Console.WriteLine("Сумма квадратов больше, чем квадрат суммы");
-                    else Console.WriteLine("Квадрат суммы больше, чем сумма квадратов");
+                    x1 = 3.5;
+                    x2 = -0.5;
+                    x3 = 0.72;
+                    y1 = 7.2;
+                    y2 = 1.2;
+                    y3 = -3.12;
+                    Calculator1[] calculator1s =
+                    {
+                        new Calculator1(x1, y1),
+                        new Calculator1(x2, y2),
+                        new Calculator1(x3, y3)
+                    };
+                    foreach (var a in calculator1s)
+                    {
+                        if (a.CalculateA())
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                    }
                     break;
 
                 case 2:

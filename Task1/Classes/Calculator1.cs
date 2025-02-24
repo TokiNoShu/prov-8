@@ -4,19 +4,20 @@ namespace Classes
 {
     public class Calculator1
     {
-        public double A {  get; set; }
-        public double B { get; set; }
+        public double X {  get; set; }
+        public double Y { get; set; }
 
 
-        public Calculator1(double a, double b) 
+        public Calculator1(double x, double y) 
         {
-            A = a;
-            B = b;
+            X = y;
+            Y = y;
 
         }
         public bool CalculateA()
         {
-            return Math.Pow(A, 2) + Math.Pow(B, 2) > Math.Pow(A + B, 2);
+            double parabolaY = 2 - X * X;
+            return Y >= 0 && Y <= parabolaY;
         }
     }
 }
