@@ -172,15 +172,7 @@ namespace Task1
                     break;
 
                 case 14:
-                    Console.WriteLine("Введите значение А:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите значение B:");
-                    b = Convert.ToDouble(Console.ReadLine());
 
-                    Calculator14 calculator14 = new Calculator14(a, b);
-                    if (calculator14.CalculateA())
-                        Console.WriteLine("Разность квадратов больше, чем модуль квадрата разности");
-                    else Console.WriteLine("Модуль квадрата разности больше, чем разность квадратов");
                     break;
 
                 case 15:
