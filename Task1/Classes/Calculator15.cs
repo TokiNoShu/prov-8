@@ -14,7 +14,7 @@
         }
         public bool CalculateA()
         {
-            return Y >= 0 && Y <= ;
+            return X >= 0 && Y <= 0;
         }
     }
 }

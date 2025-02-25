@@ -186,17 +186,11 @@ namespace Task1
                     break;
 
                 case 15:
-                    x1 = -2.2;
-                    x2 = 5.3;
-                    x3 = -0.8;
-                    y1 = -6;
-                    y2 = 3;
-                    y3 = -4;
                     Calculator15[] calculator15s =
                     {
-                        new Calculator15(x1, y1),
-                        new Calculator15(x2, y2),
-                        new Calculator15(x3, y3)
+                        new Calculator15(-2.2, -6),
+                        new Calculator15(5.3, 3),
+                        new Calculator15(-0.8, -4)
                     };
                     foreach (var a in calculator15s)
                     {
@@ -207,41 +201,26 @@ namespace Task1
                     break;
 
                 case 16:
-                    a1 = 3;
-                    a2 = 3;
-                    a3 = 9;
-                    b1 = 5;
-                    b2 = 8;
-                    b3 = 9;
-                    c1 = 4;
-                    c2 = 11;
-                    c3 = 9;
                     Calculator16[] calculator16s =
                     {
-                        new Calculator16(a1, b1, c1),
-                        new Calculator16(a2, b2, c2),
-                        new Calculator16(a3, b3, c3)
+                        new Calculator16(3, 5, 4),
+                        new Calculator16(3, 8, 11),
+                        new Calculator16(9, 9, 9)
                     };
                     foreach (var a in calculator16s)
                     {
                         if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                            Console.WriteLine($"Площадь треугольника больше");
+                        else Console.WriteLine($"Площадь квадрата больше");
                     }
                     break;
 
                 case 17:
-                    a1 = 9;
-                    a2 = 7;
-                    a3 = 0.1;
-                    b1 = 2;
-                    b2 = -3;
-                    b3 = 4;
                     Calculator17[] calculator17s =
                     {
-                        new Calculator17(a1, b1),
-                        new Calculator17(a2, b2),
-                        new Calculator17(a3, b3)
+                        new Calculator17(9, 2),
+                        new Calculator17(7, -3),
+                        new Calculator17(0.1, 4)
                     };
                     foreach (var a in calculator17s)
                     {
@@ -252,17 +231,11 @@ namespace Task1
                     break;
 
                 case 18: //хз как делать
-                    x1 = 3.5;
-                    x2 = -0.5;
-                    x3 = 0.72;
-                    y1 = 7.2;
-                    y2 = 1.2;
-                    y3 = -3.12;
                     Calculator18[] calculator18s =
                     {
-                        new Calculator18(x1, y1),
-                        new Calculator18(x2, y2),
-                        new Calculator18(x3, y3)
+                        new Calculator18(3.5, 7.2),
+                        new Calculator18(-0.5, 1.2),
+                        new Calculator18(0.72, -3.12)
                     };
                     foreach (var a in calculator18s)
                     {
@@ -273,17 +246,11 @@ namespace Task1
                     break;
 
                 case 19:
-                    fi1 = 30;
-                    fi2 = -15;
-                    fi3 = 87;
-                    lambda1 = 121;
-                    lambda2 = 50;
-                    lambda3 = 223;
                     Calculator19[] calculator19s =
                     {
-                        new Calculator19(fi1, lambda1),
-                        new Calculator19(fi2, lambda2),
-                        new Calculator19(fi3, lambda3)
+                        new Calculator19(30, 121),
+                        new Calculator19(-15, 50),
+                        new Calculator19(87, 223)
                     };
                     foreach (var a in calculator19s)
                     {
@@ -294,21 +261,11 @@ namespace Task1
                     break;
 
                 case 20:
-                    a1 = 3;
-                    a2 = 3;
-                    a3 = 0.9;
-                    b1 = 3.5;
-                    b2 = 6.55;
-                    b3 = 0.9;
-                    c1 = 1.5;
-                    c2 = 6.55;
-                    c3 = 0.9;
-
                     Calculator20[] calculator20s =
                     {
-                        new Calculator20(a1, b1, c1),
-                        new Calculator20(a2, b2, c2),
-                        new Calculator20(a3, b3, c3)
+                        new Calculator20(3, 3.5, 1.5),
+                        new Calculator20(3, 6.55, 6.55),
+                        new Calculator20(0.9, 0.9, 0.9)
                     };
                     foreach (var a in calculator20s)
                     {
@@ -319,17 +276,11 @@ namespace Task1
                     break;
 
                 case 21:
-                    a1 = -13;
-                    a2 = -5.8;
-                    a3 = 8;
-                    b1 = -3.5;
-                    b2 = 37;
-                    b3 = 0.9;
                     Calculator21[] calculator21s =
                     {
-                        new Calculator21(a1, b1),
-                        new Calculator21(a2, b2),
-                        new Calculator21(a3, b3)
+                        new Calculator21(-13, -3.5),
+                        new Calculator21(-5.8, 37),
+                        new Calculator21(8, 0.9)
                     };
                     foreach (var a in calculator21s)
                     {
@@ -340,20 +291,11 @@ namespace Task1
                     break;
 
                 case 22:
-                    a1 = 15;
-                    a2 = -38;
-                    a3 = 22;
-                    b1 = 13;
-                    b2 = 25;
-                    b3 = -1;
-                    c1 = -33;
-                    c2 = 12;
-                    c3 = -15;
                     Calculator22[] calculator22s =
                     {
-                        new Calculator22(a1, b1, c1),
-                        new Calculator22(a2, b2, c2),
-                        new Calculator22(a3, b3, c3)
+                        new Calculator22(15, 13, -33),
+                        new Calculator22(-38, 25, 12),
+                        new Calculator22(22, -1, -15)
                     };
                     foreach (var a in calculator22s)
                     {
@@ -364,20 +306,11 @@ namespace Task1
                     break;
 
                 case 23:
-                    a1 = 10;
-                    a2 = 76;
-                    a3 = 11;
-                    b1 = 34;
-                    b2 = 5;
-                    b3 = 75;
-                    c1 = 65;
-                    c2 = 55;
-                    c3 = 20;
                     Calculator23[] calculator23s =
                     {
-                        new Calculator23(a1, b1, c1),
-                        new Calculator23(a2, b2, c2),
-                        new Calculator23(a3, b3, c3)
+                        new Calculator23(10, 34, 65),
+                        new Calculator23(76, 5, 55),
+                        new Calculator23(11, 75, 20)
                     };
                     foreach (var a in calculator23s)
                     {
@@ -388,20 +321,11 @@ namespace Task1
                     break;
 
                 case 24:
-                    a1 = 10;
-                    a2 = 76;
-                    a3 = 11;
-                    b1 = 34;
-                    b2 = 5;
-                    b3 = 75;
-                    c1 = 65;
-                    c2 = 55;
-                    c3 = 20;
                     Calculator24[] calculator24s =
                     {
-                        new Calculator24(a1, b1, c1),
-                        new Calculator24(a2, b2, c2),
-                        new Calculator24(a3, b3, c3)
+                        new Calculator24(10, 34, 65),
+                        new Calculator24(76, 5, 55),
+                        new Calculator24(11, 75, 20)
                     };
                     foreach (var a in calculator24s)
                     {
@@ -412,20 +336,11 @@ namespace Task1
                     break;
 
                 case 25:
-                    a1 = 10;
-                    a2 = 76;
-                    a3 = 11;
-                    b1 = 34;
-                    b2 = 5;
-                    b3 = 75;
-                    c1 = 65;
-                    c2 = 55;
-                    c3 = 20;
                     Calculator25[] calculator25s =
                     {
-                        new Calculator25(a1, b1, c1),
-                        new Calculator25(a2, b2, c2),
-                        new Calculator25(a3, b3, c3)
+                        new Calculator25(10, 34, 65),
+                        new Calculator25(76, 5, 55),
+                        new Calculator25(11, 75, 20)
                     };
                     foreach (var a in calculator25s)
                     {
@@ -436,20 +351,12 @@ namespace Task1
                     break;
 
                 case 26:
-                    a1 = 56;
-                    a2 = 47;
-                    a3 = 29;
-                    a4 = 19;
-                    b1 = 38;
-                    b2 = 91;
-                    b3 = 76;
-                    b4 = 53;
                     Calculator26[] calculator26s =
                     {
-                        new Calculator26(a1, b1),
-                        new Calculator26(a2, b2),
-                        new Calculator26(a3, b3),
-                        new Calculator26(a4, b4)
+                        new Calculator26(56, 38),
+                        new Calculator26(47, 91),
+                        new Calculator26(29, 76),
+                        new Calculator26(19, 53)
                     };
                     foreach (var a in calculator26s)
                     {
@@ -460,20 +367,12 @@ namespace Task1
                     break;
 
                 case 27:
-                    a1 = 36;
-                    a2 = 41;
-                    a3 = 39;
-                    a4 = 29;
-                    b1 = 78;
-                    b2 = 81;
-                    b3 = 76;
-                    b4 = 53;
                     Calculator27[] calculator27s =
                     {
-                        new Calculator27(a1, b1),
-                        new Calculator27(a2, b2),
-                        new Calculator27(a3, b3),
-                        new Calculator27(a4, b4)
+                        new Calculator27(36, 78),
+                        new Calculator27(41, 81),
+                        new Calculator27(39, 76),
+                        new Calculator27(29, 53)
                     };
                     foreach (var a in calculator27s)
                     {
@@ -484,20 +383,11 @@ namespace Task1
                     break;
 
                 case 28:
-                    r11 = 5;
-                    r12 = 3;
-                    r13 = 4;
-                    r21 = 10;
-                    r22 = 5;
-                    r23 = 6;
-                    r31 = 2;
-                    r32 = 7;
-                    r33 = 8;
                     Calculator28[] calculator28s =
                     {
-                        new Calculator28(r11, r12, r13),
-                        new Calculator28(r21, r22, r23),
-                        new Calculator28(r31, r32, r33)
+                        new Calculator28(5, 3, 4),
+                        new Calculator28(10, 5, 6),
+                        new Calculator28(2, 7, 8)
                     };
                     foreach (var a in calculator28s)
                     {
@@ -517,9 +407,9 @@ namespace Task1
 
                     Calculator29[] calculator29s =
                     {
-                        new Calculator29(om1, a1),
-                        new Calculator29(om2, a2),
-                        new Calculator29(om3, a3)
+                        new Calculator29(5, 2),
+                        new Calculator29(30, 4),
+                        new Calculator29(800, 6)
                     };
                     foreach (var a in calculator29s)
                     {
@@ -538,9 +428,9 @@ namespace Task1
                     y3 = -3.12;
                     Calculator30[] calculator30s =
                     {
-                        new Calculator30(x1, y1),
-                        new Calculator30(x2, y2),
-                        new Calculator30(x3, y3)
+                        new Calculator30(3.5, 7.2),
+                        new Calculator30(-0.5, 1.2),
+                        new Calculator30(-0.72, -3.12)
                     };
                     foreach (var a in calculator30s)
                     {

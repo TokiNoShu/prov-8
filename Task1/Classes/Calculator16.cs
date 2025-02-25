@@ -1,25 +1,26 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
 
 namespace Classes
 {
     public class Calculator16
     {
-        public double AX { get; set; }
-        public double AY { get; set; }
-        public double R { get; set; }
-        public double R1 { get; set; }
+        public double A { get; set; }
+        public double B { get; set; }
+        public double C { get; set; }
 
-        public Calculator16(double ax, double ay, double r, double r1)
+        public Calculator16(double a, double b, double c)
         {
-            AX = Math.Abs(ax);
-            AY = Math.Abs(ay);
-            R = Math.Abs(r);
-            R1 = Math.Abs(r1);
+            A = a;
+            B = b;
+            C = c;
         }
         public bool CalculateA()
         {
-            return AX < R && AX > R1 && AY < R && AY > R1;
+            double[] minimum = { A, B, C }; 
+            double p = (A + B + C) / 2;
+            return Math.Sqrt(p*(p - A) * (p - B) * (p-C)) > Math.Pow(Math.Min(Math.Min(A, B), C), 2);
         }
     }
 }
