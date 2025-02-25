@@ -225,8 +225,8 @@ namespace Task1
                     foreach (var a in calculator17s)
                     {
                         if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в первой четверти.");
+                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в первой четверти.");
                     }
                     break;
 
