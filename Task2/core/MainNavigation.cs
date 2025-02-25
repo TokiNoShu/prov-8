@@ -54,9 +54,9 @@ namespace Task2.Core
                 case 3:
                     Calculator3[] calculator3s =
                     {
-                        new Calculator3(2, 1.5),
-                        new Calculator3(-0.5, 2.3),
-                        new Calculator3(1.5, -0.8)
+                        new Calculator3(2, 1.5, Convert.ToDouble(Console.ReadLine())),
+                        new Calculator3(-0.5, 2.3, Convert.ToDouble(Console.ReadLine())),
+                        new Calculator3(1.5, -0.8, Convert.ToDouble(Console.ReadLine()))
                     };
                     foreach (var calc in calculator3s)
                     {
