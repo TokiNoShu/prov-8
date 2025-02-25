@@ -10,7 +10,6 @@ namespace Task1
             Console.WriteLine("Практическая работа №8");
             Console.WriteLine("Введите номер задания от 1 до 30:");
             int taskNumber = Convert.ToInt32(Console.ReadLine());
-
             switch (taskNumber)
             {
                 case 1:
@@ -200,7 +199,7 @@ namespace Task1
                     Calculator15[] calculator15s =
                     {
                         new Calculator15(-2.2, -6),
-                        new Calculator15(5.3, -3),
+                        new Calculator15(5.3, 3),
                         new Calculator15(-0.8, -4)
                     };
                     foreach (var calc in calculator15s)
