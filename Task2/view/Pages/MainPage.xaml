@@ -14,7 +14,7 @@
         <StackPanel HorizontalAlignment="Center"
                     VerticalAlignment="Top"
                     Orientation="Horizontal" Margin="0,181,0,0">
-            <TextBlock Text="Введите номер задания 1-21: "
+            <TextBlock Text="Введите номер задания 1-30: "
                        FontSize="20"
                        FontWeight="Bold"/>
             <TextBox x:Name="NumTask"

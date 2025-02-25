@@ -1,26 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Classes
+﻿namespace Classes
 {
     public class Calculator19
     {
-        public int A { get; set; }
-        public int B { get; set; }
-        public int C { get; set; }
+        public double Fi { get; set; }
+        public double Lambda { get; set; }
 
-        public Calculator19(int ai, int bi, int ci)
+        public Calculator19(double fi, double lambda)
         {
-            A = (int)Math.Pow(ai, 2);
-            B = (int)Math.Pow(bi, 2);
-            C = (int)Math.Pow(ci, 2);
+            Fi = fi;
+            Lambda = lambda;
         }
-        public bool CalculateA()
+
+        public string CalculateA()
         {
-            return C == A + B || A == C + B || B == A + C;
+            string hemisphere = Fi >= 0 ? "Северное" : "Южное";
+            hemisphere += Lambda >= 0 ? " Восточное" : " Западное";
+            return hemisphere;
         }
     }
 }

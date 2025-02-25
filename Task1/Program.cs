@@ -1,6 +1,5 @@
 ﻿using Classes;
 using System;
-using System.Security.Cryptography;
 
 namespace Task1
 {
@@ -10,11 +9,9 @@ namespace Task1
         {
             Console.WriteLine("Практическая работа №8");
             Console.WriteLine("Введите номер задания от 1 до 30:");
-            int sm = Convert.ToInt32(Console.ReadLine());
+            int taskNumber = Convert.ToInt32(Console.ReadLine());
 
-            double x1, x2, x3, y1, y2, y3, a1, a2, a3, b1, b2, b3, c1, c2, c3;
-
-            switch (sm)
+            switch (taskNumber)
             {
                 case 1:
                     Calculator1[] calculator1s =
@@ -23,11 +20,10 @@ namespace Task1
                         new Calculator1(-0.5, 1.2),
                         new Calculator1(0.72, -3.12)
                     };
-                    foreach (var a in calculator1s)
+                    foreach (var calc in calculator1s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        bool result = calc.CalculateA();
+                        Console.WriteLine($"Точка ({calc.X}, {calc.Y}) лежит в области: {result}");
                     }
                     break;
 
@@ -38,57 +34,61 @@ namespace Task1
                         new Calculator2(2.1, -6.55, 0.1),
                         new Calculator2(-9, -3.7, -0.1)
                     };
-                    foreach (var a in calculator2s)
-                            Console.WriteLine($"Число {a.CalculateA()} среднее.");
+                    foreach (var calc in calculator2s)
+                    {
+                        double result = calc.CalculateA();
+                        Console.WriteLine($"Среднее значение: {result}");
+                    }
                     break;
 
-/*                case 3:
+                case 3:
                     Calculator3[] calculator3s =
-{
+                    {
                         new Calculator3(2, 1.5),
                         new Calculator3(-0.5, 2.3),
                         new Calculator3(1.5, -0.8)
                     };
-                    foreach (var a in calculator3s)
-                        if (a.CalculateA()) Console.WriteLine("Точка A раполагается на более удалённом расстоянии");
-                    else Console.WriteLine("Точка B раполагается на более удалённом расстоянии");
-                    break;*/
+                    foreach (var calc in calculator3s)
+                    {
+                        bool result = calc.CalculateA();
+                        Console.WriteLine($"Точка ({calc.X}, {calc.Y}) лежит внутри окружности: {result}");
+                    }
+                    break;
 
                 case 4:
                     Calculator4[] calculator4s =
-{
+                    {
                         new Calculator4(3, 3.5, -2.1),
                         new Calculator4(21, -6.55, 0.1),
                         new Calculator4(-9, -3.7, -0.1)
                     };
-                    foreach (var a in calculator4s)
-                        if (a.CalculateA())
-                            Console.WriteLine("Треугольник ABC является треугольником");
-                        else Console.WriteLine("Треугольник ABC не является треугольником");
+                    foreach (var calc in calculator4s)
+                    {
+                        bool result = calc.CalculateA();
+                        Console.WriteLine($"Треугольник является прямоугольным: {result}");
+                    }
                     break;
 
                 case 5:
-                    Console.WriteLine("Введите номер месяца");
-                    int months = Convert.ToInt16(Console.ReadLine());
-                    Calculator5 calculator5 = new Calculator5(months);
-                    Console.WriteLine(calculator5.CalculateA());
+                    Console.WriteLine("Введите номер месяца:");
+                    int month = Convert.ToInt32(Console.ReadLine());
+                    Calculator5 calculator5 = new Calculator5(month);
+                    string season = calculator5.CalculateA();
+                    Console.WriteLine($"Сезон: {season}");
                     break;
 
                 case 6:
                     Calculator6[] calculator6s =
-{
+                    {
                         new Calculator6(-3, 3.5, 0.1),
                         new Calculator6(58, 27, -87),
                         new Calculator6(-8, -3.7, -0.1)
                     };
-                    double[] nums = { 1, 2, 3 };
-                    foreach (var a in calculator6s)
-                        nums = a.CalculateA();
-                        for (int i = 0; i < nums.Length; i++)
-                        {
-                            Console.WriteLine(nums[i]);
-                        }
-                        
+                    foreach (var calc in calculator6s)
+                    {
+                        double[] result = calc.CalculateA();
+                        Console.WriteLine($"Результат: A = {result[0]}, B = {result[1]}, C = {result[2]}");
+                    }
                     break;
 
                 case 7:
@@ -98,9 +98,11 @@ namespace Task1
                         new Calculator7(8, 9, 12, 1),
                         new Calculator7(-3.5, 0.9, 2, 3)
                     };
-                    foreach (var a in calculator7s)
-                        if (a.CalculateA()) Console.WriteLine("Точка А больше удалена");
-                        else Console.WriteLine("Точка B больше удалена");
+                    foreach (var calc in calculator7s)
+                    {
+                        bool result = calc.CalculateA();
+                        Console.WriteLine($"Точка A дальше от начала координат: {result}");
+                    }
                     break;
 
                 case 8:
@@ -110,10 +112,11 @@ namespace Task1
                         new Calculator8(3, 6.55, 6.55),
                         new Calculator8(0.9, 0.9, 0.9)
                     };
-
-                    foreach (var a in calculator8s)
-                        if (a.CalculateA()) Console.WriteLine("Равнобедренный");
-                        else Console.WriteLine("Неравнобедренный");
+                    foreach (var calc in calculator8s)
+                    {
+                        bool result = calc.CalculateA();
+                        Console.WriteLine($"Треугольник равнобедренный: {result}");
+                    }
                     break;
 
                 case 9:
@@ -129,12 +132,13 @@ namespace Task1
                     break;
 
                 case 10:
-                    Console.WriteLine("Введите номер:");
-                    int otkritka = Convert.ToInt16(Console.ReadLine());
+                    Console.WriteLine("Введите номер темы (1-3):");
+                    int theme = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Введите вариант (a, b, c):");
                     string variant = Console.ReadLine();
-                    Calculator10 calculator10 = new Calculator10(otkritka, variant);
-                    Console.WriteLine(calculator10.CalculateA());
+                    Calculator10 calculator10 = new Calculator10(theme, variant);
+                    string card = calculator10.CalculateA();
+                    Console.WriteLine($"Открытка: {card}");
                     break;
 
                 case 11:
@@ -144,9 +148,12 @@ namespace Task1
                         new Calculator11(5.8, 2.7),
                         new Calculator11(-8, -3.5)
                     };
-                    foreach (var a in calculator11s)
-                        Console.WriteLine(a.CalculateA());
-                        break;
+                    foreach (var calc in calculator11s)
+                    {
+                        double[] result = calc.CalculateA();
+                        Console.WriteLine($"Результат: A = {result[0]}, B = {result[1]}");
+                    }
+                    break;
 
                 case 12:
                     Calculator12[] calculator12s =
@@ -155,8 +162,11 @@ namespace Task1
                         new Calculator12(-31, 65, 12),
                         new Calculator12(52, -1, -33)
                     };
-                    foreach (var a in calculator12s)
-                        Console.WriteLine(a.CalculateA());
+                    foreach (var calc in calculator12s)
+                    {
+                        double result = calc.CalculateA();
+                        Console.WriteLine($"Наименьшее число: {result}");
+                    }
                     break;
 
                 case 13:
@@ -166,388 +176,254 @@ namespace Task1
                         new Calculator13(2.3, 3, 2.5),
                         new Calculator13(23, -34, 89.5)
                     };
-                    double[] middleNums = { };
-                    foreach (var a in calculator13s)
-                        middleNums = a.CalculateA();
-                        for (int i = 0; i < middleNums.Length; i++)
-                            Console.WriteLine(middleNums[i]);
+                    foreach (var calc in calculator13s)
+                    {
+                        double[] result = calc.CalculateA();
+                        Console.WriteLine($"Числа, большие среднего арифметического по модулю: {string.Join(", ", result)}");
+                    }
                     break;
 
                 case 14:
-                    Console.WriteLine("Введите значение А:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    Console.WriteLine("Введите значение B:");
-                    b = Convert.ToDouble(Console.ReadLine());
-
-                    Calculator14 calculator14 = new Calculator14(a, b);
-                    if (calculator14.CalculateA())
-                        Console.WriteLine("Разность квадратов больше, чем модуль квадрата разности");
-                    else Console.WriteLine("Модуль квадрата разности больше, чем разность квадратов");
+                    Calculator14[] calculator14s =
+                    {
+                        new Calculator14(2.2, -6),
+                        new Calculator14(0.3, 3)
+                    };
+                    foreach (var calc in calculator14s)
+                    {
+                        bool result = calc.CalculateA();
+                        Console.WriteLine($"Точка ({calc.X}, {calc.Y}) лежит на кривой: {result}");
+                    }
                     break;
 
                 case 15:
-                    x1 = -2.2;
-                    x2 = 5.3;
-                    x3 = -0.8;
-                    y1 = -6;
-                    y2 = 3;
-                    y3 = -4;
                     Calculator15[] calculator15s =
                     {
-                        new Calculator15(x1, y1),
-                        new Calculator15(x2, y2),
-                        new Calculator15(x3, y3)
+                        new Calculator15(-2.2, -6),
+                        new Calculator15(5.3, -3),
+                        new Calculator15(-0.8, -4)
                     };
-                    foreach (var a in calculator15s)
+                    foreach (var calc in calculator15s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в четвертой четверти.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в четвертой четверти.");
+                        bool result = calc.CalculateA();
+                        Console.WriteLine($"Точка ({calc.X}, {calc.Y}) лежит в четвертой четверти: {result}");
                     }
                     break;
 
                 case 16:
-                    a1 = 3;
-                    a2 = 3;
-                    a3 = 9;
-                    b1 = 5;
-                    b2 = 8;
-                    b3 = 9;
-                    c1 = 4;
-                    c2 = 11;
-                    c3 = 9;
                     Calculator16[] calculator16s =
                     {
-                        new Calculator16(a1, b1, c1),
-                        new Calculator16(a2, b2, c2),
-                        new Calculator16(a3, b3, c3)
+                        new Calculator16(3, 5, 4),
+                        new Calculator16(3, 8, 11),
+                        new Calculator16(9, 9, 9)
                     };
-                    foreach (var a in calculator16s)
+                    foreach (var calc in calculator16s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        string result = calc.CalculateA();
+                        Console.WriteLine($"Результат: {result}");
                     }
                     break;
 
                 case 17:
-                    a1 = 9;
-                    a2 = 7;
-                    a3 = 0.1;
-                    b1 = 2;
-                    b2 = -3;
-                    b3 = 4;
                     Calculator17[] calculator17s =
                     {
-                        new Calculator17(a1, b1),
-                        new Calculator17(a2, b2),
-                        new Calculator17(a3, b3)
+                        new Calculator17(9, 2),
+                        new Calculator17(7, -3),
+                        new Calculator17(0.1, 4)
                     };
-                    foreach (var a in calculator17s)
+                    foreach (var calc in calculator17s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        bool result = calc.CalculateA();
+                        Console.WriteLine($"Точка ({calc.X}, {calc.Y}) лежит в первой четверти: {result}");
                     }
                     break;
 
-                case 18: //хз как делать
-                    x1 = 3.5;
-                    x2 = -0.5;
-                    x3 = 0.72;
-                    y1 = 7.2;
-                    y2 = 1.2;
-                    y3 = -3.12;
+                case 18:
                     Calculator18[] calculator18s =
                     {
-                        new Calculator18(x1, y1),
-                        new Calculator18(x2, y2),
-                        new Calculator18(x3, y3)
+                        new Calculator18(3.5, 7.2),
+                        new Calculator18(-0.5, 1.2),
+                        new Calculator18(0.72, -3.12)
                     };
-                    foreach (var a in calculator18s)
+                    foreach (var calc in calculator18s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        bool result = calc.CalculateA();
+                        Console.WriteLine($"Точка ({calc.X}, {calc.Y}) лежит на кривой: {result}");
                     }
                     break;
 
                 case 19:
-                    fi1 = 30;
-                    fi2 = -15;
-                    fi3 = 87;
-                    lambda1 = 121;
-                    lambda2 = 50;
-                    lambda3 = 223;
                     Calculator19[] calculator19s =
                     {
-                        new Calculator19(fi1, lambda1),
-                        new Calculator19(fi2, lambda2),
-                        new Calculator19(fi3, lambda3)
+                        new Calculator19(30, 121),
+                        new Calculator19(-15, 50),
+                        new Calculator19(87, 223)
                     };
-                    foreach (var a in calculator19s)
+                    foreach (var calc in calculator19s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        string result = calc.CalculateA();
+                        Console.WriteLine($"Полушарие: {result}");
                     }
                     break;
 
                 case 20:
-                    a1 = 3;
-                    a2 = 3;
-                    a3 = 0.9;
-                    b1 = 3.5;
-                    b2 = 6.55;
-                    b3 = 0.9;
-                    c1 = 1.5;
-                    c2 = 6.55;
-                    c3 = 0.9;
-
                     Calculator20[] calculator20s =
                     {
-                        new Calculator20(a1, b1, c1),
-                        new Calculator20(a2, b2, c2),
-                        new Calculator20(a3, b3, c3)
+                        new Calculator20(3, 3.5, 1.5),
+                        new Calculator20(3, 6.55, 6.55),
+                        new Calculator20(0.9, 0.9, 0.9)
                     };
-                    foreach (var a in calculator20s)
+                    foreach (var calc in calculator20s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        string result = calc.CalculateA();
+                        Console.WriteLine($"Тип треугольника: {result}");
                     }
                     break;
 
                 case 21:
-                    a1 = -13;
-                    a2 = -5.8;
-                    a3 = 8;
-                    b1 = -3.5;
-                    b2 = 37;
-                    b3 = 0.9;
                     Calculator21[] calculator21s =
                     {
-                        new Calculator21(a1, b1),
-                        new Calculator21(a2, b2),
-                        new Calculator21(a3, b3)
+                        new Calculator21(-13, -3.5),
+                        new Calculator21(5.8, 37),
+                        new Calculator21(8, -15)
                     };
-                    foreach (var a in calculator21s)
+                    foreach (var calc in calculator21s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        double[] result = calc.CalculateA();
+                        Console.WriteLine($"Результат: A = {result[0]}, B = {result[1]}");
                     }
                     break;
 
                 case 22:
-                    a1 = 15;
-                    a2 = -38;
-                    a3 = 22;
-                    b1 = 13;
-                    b2 = 25;
-                    b3 = -1;
-                    c1 = -33;
-                    c2 = 12;
-                    c3 = -15;
                     Calculator22[] calculator22s =
                     {
-                        new Calculator22(a1, b1, c1),
-                        new Calculator22(a2, b2, c2),
-                        new Calculator22(a3, b3, c3)
+                        new Calculator22(15, 13, -33),
+                        new Calculator22(-38, 25, 12),
+                        new Calculator22(22, -1, -33)
                     };
-                    foreach (var a in calculator22s)
+                    foreach (var calc in calculator22s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        double result = calc.CalculateA();
+                        Console.WriteLine($"Наименьшее число: {result}");
                     }
                     break;
 
                 case 23:
-                    a1 = 10;
-                    a2 = 76;
-                    a3 = 11;
-                    b1 = 34;
-                    b2 = 5;
-                    b3 = 75;
-                    c1 = 65;
-                    c2 = 55;
-                    c3 = 20;
                     Calculator23[] calculator23s =
                     {
-                        new Calculator23(a1, b1, c1),
-                        new Calculator23(a2, b2, c2),
-                        new Calculator23(a3, b3, c3)
+                        new Calculator23(10, 34, 65),
+                        new Calculator23(76, 18, 55),
+                        new Calculator23(81, 75, 20)
                     };
-                    foreach (var a in calculator23s)
+                    foreach (var calc in calculator23s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        int[] result = calc.CalculateA();
+                        Console.WriteLine($"Числа, большие 1101011: {string.Join(", ", result)}");
                     }
                     break;
 
                 case 24:
-                    a1 = 10;
-                    a2 = 76;
-                    a3 = 11;
-                    b1 = 34;
-                    b2 = 5;
-                    b3 = 75;
-                    c1 = 65;
-                    c2 = 55;
-                    c3 = 20;
                     Calculator24[] calculator24s =
                     {
-                        new Calculator24(a1, b1, c1),
-                        new Calculator24(a2, b2, c2),
-                        new Calculator24(a3, b3, c3)
+                        new Calculator24(10, 34, 65),
+                        new Calculator24(76, 5, 55),
+                        new Calculator24(11, 75, 20)
                     };
-                    foreach (var a in calculator24s)
+                    foreach (var calc in calculator24s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        int result = calc.CalculateA();
+                        Console.WriteLine($"Наибольшее число: {result}");
                     }
                     break;
 
                 case 25:
-                    a1 = 10;
-                    a2 = 76;
-                    a3 = 11;
-                    b1 = 34;
-                    b2 = 5;
-                    b3 = 75;
-                    c1 = 65;
-                    c2 = 55;
-                    c3 = 20;
                     Calculator25[] calculator25s =
                     {
-                        new Calculator25(a1, b1, c1),
-                        new Calculator25(a2, b2, c2),
-                        new Calculator25(a3, b3, c3)
+                        new Calculator25(0xA, 0x22, 0x41),
+                        new Calculator25(0x4C, 0x5, 0x37),
+                        new Calculator25(0xB, 0x4B, 0x14)
                     };
-                    foreach (var a in calculator25s)
+                    foreach (var calc in calculator25s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        int result = calc.CalculateA();
+                        Console.WriteLine($"Наименьшее число: {result}");
                     }
                     break;
 
                 case 26:
-                    a1 = 56;
-                    a2 = 47;
-                    a3 = 29;
-                    a4 = 19;
-                    b1 = 38;
-                    b2 = 91;
-                    b3 = 76;
-                    b4 = 53;
                     Calculator26[] calculator26s =
                     {
-                        new Calculator26(a1, b1),
-                        new Calculator26(a2, b2),
-                        new Calculator26(a3, b3),
-                        new Calculator26(a4, b4)
+                        new Calculator26(56, 38),
+                        new Calculator26(47, 91),
+                        new Calculator26(29, 76),
+                        new Calculator26(19, 53)
                     };
-                    foreach (var a in calculator26s)
+                    foreach (var calc in calculator26s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        int result = calc.CalculateA();
+                        Console.WriteLine($"Сумма цифр: {result}");
                     }
                     break;
 
                 case 27:
-                    a1 = 36;
-                    a2 = 41;
-                    a3 = 39;
-                    a4 = 29;
-                    b1 = 78;
-                    b2 = 81;
-                    b3 = 76;
-                    b4 = 53;
                     Calculator27[] calculator27s =
                     {
-                        new Calculator27(a1, b1),
-                        new Calculator27(a2, b2),
-                        new Calculator27(a3, b3),
-                        new Calculator27(a4, b4)
+                        new Calculator27(46, 78),
+                        new Calculator27(41, 81),
+                        new Calculator27(39, 76),
+                        new Calculator27(29, 53)
                     };
-                    foreach (var a in calculator27s)
+                    foreach (var calc in calculator27s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        int result = calc.CalculateA();
+                        Console.WriteLine($"Произведение цифр: {result}");
                     }
                     break;
 
                 case 28:
-                    r11 = 5;
-                    r12 = 3;
-                    r13 = 4;
-                    r21 = 10;
-                    r22 = 5;
-                    r23 = 6;
-                    r31 = 2;
-                    r32 = 7;
-                    r33 = 8;
                     Calculator28[] calculator28s =
                     {
-                        new Calculator28(r11, r12, r13),
-                        new Calculator28(r21, r22, r23),
-                        new Calculator28(r31, r32, r33)
+                        new Calculator28(5, 10, 2),
+                        new Calculator28(3, 5, 7),
+                        new Calculator28(4, 6, 8)
                     };
-                    foreach (var a in calculator28s)
+                    foreach (var calc in calculator28s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        double[] result = calc.CalculateA();
+                        Console.WriteLine($"Сопротивление (последовательно): {result[0]}, (параллельно): {result[1]}");
                     }
                     break;
 
                 case 29:
-                    om1 = 5;
-                    om2 = 30;
-                    om3 = 800;
-                    a1 = 2;
-                    a2 = 4;
-                    a3 = 6;
-
                     Calculator29[] calculator29s =
                     {
-                        new Calculator29(om1, a1),
-                        new Calculator29(om2, a2),
-                        new Calculator29(om3, a3)
+                        new Calculator29(6, 2),
+                        new Calculator29(30, 4),
+                        new Calculator29(800, 0.6)
                     };
-                    foreach (var a in calculator29s)
+                    foreach (var calc in calculator29s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        string result = calc.CalculateA();
+                        Console.WriteLine($"Результат: {result}");
                     }
                     break;
 
                 case 30:
-                    x1 = 3.5;
-                    x2 = -0.5;
-                    x3 = 0.72;
-                    y1 = 7.2;
-                    y2 = 1.2;
-                    y3 = -3.12;
                     Calculator30[] calculator30s =
                     {
-                        new Calculator30(x1, y1),
-                        new Calculator30(x2, y2),
-                        new Calculator30(x3, y3)
+                        new Calculator30(6, 10, 2),
+                        new Calculator30(3, 5, 7),
+                        new Calculator30(4, 12, 8)
                     };
-                    foreach (var a in calculator30s)
+                    foreach (var calc in calculator30s)
                     {
-                        if (a.CalculateA())
-                            Console.WriteLine($"Точка А({a.X}, {a.Y}) лежит в области.");
-                        else Console.WriteLine($"Точка А({a.X},{a.Y}) не лежит в области.");
+                        string result = calc.CalculateA();
+                        Console.WriteLine($"Результат: {result}");
                     }
+                    break;
+
+                default:
+                    Console.WriteLine("Неверный номер задания.");
                     break;
             }
         }

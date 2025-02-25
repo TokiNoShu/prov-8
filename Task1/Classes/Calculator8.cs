@@ -1,7 +1,4 @@
-﻿using System;
-using System.Security.Cryptography;
-
-namespace Classes
+﻿namespace Classes
 {
     public class Calculator8
     {
@@ -9,17 +6,16 @@ namespace Classes
         public double B { get; set; }
         public double C { get; set; }
 
-
-
         public Calculator8(double a, double b, double c)
         {
             A = a;
             B = b;
             C = c;
         }
+
         public bool CalculateA()
         {
-            return A == B || A == C || B == C;
+            return A == B || B == C || A == C;
         }
     }
 }

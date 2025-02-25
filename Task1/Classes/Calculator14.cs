@@ -4,19 +4,20 @@ namespace Classes
 {
     public class Calculator14
     {
-        public double A { get; set; }
-        public double B { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
 
-
-        public Calculator14(double a, double b)
+        public Calculator14(double x, double y)
         {
-            A = a;
-            B = b;
-
+            X = x;
+            Y = y;
         }
+
         public bool CalculateA()
         {
-            return Math.Pow(A, 2) - Math.Pow(B, 2) > Math.Abs(Math.Pow(A - B, 2));
+            double eps = 0.001;
+            double curveY = Math.Abs(X) <= 2 ? X * X : 4;
+            return Math.Abs(curveY - Y) <= eps;
         }
     }
 }

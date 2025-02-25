@@ -4,20 +4,20 @@ namespace Classes
 {
     public class Calculator24
     {
-        public double A { get; set; }
-        public double R { get; set; }
-        public double sSq;
-        public double sCir;
-        public Calculator24(double a, double r)
+        public int A { get; set; }
+        public int B { get; set; }
+        public int C { get; set; }
+
+        public Calculator24(int a, int b, int c)
         {
             A = a;
-            R = r;
-            sSq = Math.Pow(A, 2) * Math.Sqrt(3 / 4);
-            sCir = Math.PI * Math.Pow(R, 2);
+            B = b;
+            C = c;
         }
-        public bool CalculateA()
+
+        public int CalculateA()
         {
-            return sSq > sCir;
+            return Math.Max(Math.Max(A, B), C);
         }
     }
 }

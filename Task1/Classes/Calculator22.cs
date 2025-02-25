@@ -1,23 +1,23 @@
-﻿namespace Classes
+﻿using System;
+
+namespace Classes
 {
     public class Calculator22
     {
-        public double M {  get; set; }
-        public double V { get; set; }
-        public double M1 { get; set; }
-        public double V1 { get; set; }
+        public double A { get; set; }
+        public double B { get; set; }
+        public double C { get; set; }
 
-
-        public Calculator22(double m, double v, double m1, double v1) 
+        public Calculator22(double a, double b, double c)
         {
-            M = m;
-            V = v;
-            M1 = m1;
-            V1 = v1;
+            A = a;
+            B = b;
+            C = c;
         }
-        public bool CalculateA()
-        { 
-            return M/V > M1/V1;
+
+        public double CalculateA()
+        {
+            return Math.Min(Math.Min(A, B), C);
         }
     }
 }

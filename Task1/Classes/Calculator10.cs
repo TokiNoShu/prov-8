@@ -1,29 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Classes
+﻿namespace Classes
 {
     public class Calculator10
     {
-        public int A { get; set; }
-        public string B { get; set; }
+        public int Theme { get; set; }
+        public string Variant { get; set; }
 
-
-
-
-        public Calculator10(int a, string b)
+        public Calculator10(int theme, string variant)
         {
-            A = a;
-            B = b;
+            Theme = theme;
+            Variant = variant;
         }
+
         public string CalculateA()
         {
-            if (A >= 1 && A <= 3 && (B == "a" || B == "b" || B == "c"))
-                return $"открытка {A}, вариант {B}";
-            else return "номер 1-3 и вариант a, b, c";
+            string[] themes = { "Новогодние", "С Днем Рождения", "С Днем Защитника Отечества" };
+            if (Theme < 1 || Theme > 3 || (Variant != "a" && Variant != "b" && Variant != "c"))
+                return "Неправильный номер темы или варианта";
+            return $"{themes[Theme - 1]}, вариант {Variant}";
         }
     }
 }

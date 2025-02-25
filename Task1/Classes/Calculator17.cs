@@ -2,20 +2,18 @@
 {
     public class Calculator17
     {
-        public double AX { get; set; }
-        public double AY { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
 
-
-
-
-        public Calculator17(double ax, double ay)
+        public Calculator17(double x, double y)
         {
-            AX = ax;
-            AY = ay;
+            X = x;
+            Y = y;
         }
+
         public bool CalculateA()
         {
-            return AX > 0 && AY < 0;
+            return X > 0 && Y > 0;
         }
     }
 }

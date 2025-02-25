@@ -1,31 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Classes
+﻿namespace Classes
 {
     public class Calculator20
     {
         public double A { get; set; }
         public double B { get; set; }
-        public Calculator20(double a, double b)
+        public double C { get; set; }
+
+        public Calculator20(double a, double b, double c)
         {
             A = a;
-            B = Math.Pow(b, -3);
+            B = b;
+            C = c;
         }
-        public double LiterSpeed()
+
+        public string CalculateA()
         {
-            return A * 0.001;
-        }
-        public double MeterSpeed()
-        {
-            return B / 60;
-        }
-        public bool CalculateA()
-        {
-            return LiterSpeed() > MeterSpeed();
+            if (A == B && B == C)
+                return "Равносторонний";
+            else if (A == B || B == C || A == C)
+                return "Равнобедренный";
+            else
+                return "Простой";
         }
     }
 }

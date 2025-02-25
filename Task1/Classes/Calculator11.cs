@@ -5,22 +5,25 @@
         public double A { get; set; }
         public double B { get; set; }
 
-
         public Calculator11(double a, double b)
         {
             A = a;
             B = b;
         }
+
         public double[] CalculateA()
         {
-            if (A > 0 && B < 0)
+            if (A * B < 0)
             {
-                A *= -1;
-                B *= -1;
+                A = -A;
+                B = -B;
             }
-            else A *= 0; B *= 0;
-            double[] nums = { A, B};
-            return nums;
+            else
+            {
+                A = 0;
+                B = 0;
+            }
+            return new double[] { A, B };
         }
     }
 }

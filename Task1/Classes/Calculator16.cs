@@ -1,25 +1,27 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 
 namespace Classes
 {
     public class Calculator16
     {
-        public double AX { get; set; }
-        public double AY { get; set; }
-        public double R { get; set; }
-        public double R1 { get; set; }
+        public double A { get; set; }
+        public double B { get; set; }
+        public double C { get; set; }
 
-        public Calculator16(double ax, double ay, double r, double r1)
+        public Calculator16(double a, double b, double c)
         {
-            AX = Math.Abs(ax);
-            AY = Math.Abs(ay);
-            R = Math.Abs(r);
-            R1 = Math.Abs(r1);
+            A = a;
+            B = b;
+            C = c;
         }
-        public bool CalculateA()
+
+        public string CalculateA()
         {
-            return AX < R && AX > R1 && AY < R && AY > R1;
+            double minSide = Math.Min(Math.Min(A, B), C);
+            double triangleArea = 0.25 * Math.Sqrt((A + B + C) * (A + B - C) * (A + C - B) * (B + C - A));
+            double squareArea = minSide * minSide;
+
+            return triangleArea > squareArea ? "Площадь треугольника больше" : "Площадь квадрата больше";
         }
     }
 }
