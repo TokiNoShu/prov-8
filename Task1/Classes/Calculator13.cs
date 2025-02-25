@@ -1,30 +1,31 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System;
 
 namespace Classes
 {
     public class Calculator13
     {
-        public double A;
-        public double B;
-        public double C;
+        public double X { get; set; }
+        public double Y { get; set; }
+        public double Z { get; set; }
 
-        public Calculator13(double a, double b, double c)
+        public Calculator13(double x, double y, double z)
         {
-            A = a;
-            B = b;
-            C = c;
+            X = x;
+            Y = y;
+            Z = z;
         }
+
         public double[] CalculateA()
         {
-            double[] middleNums = { };
-            double middle = (A + B + C) / 3;
-            double[] nums = { A, B, C };
-            for (int i = 0; i < nums.Length; i++)
-            {
-                if (i > middle)
-                    middleNums[i] = nums[i];
-            }
-            return middleNums;
+            double average = (Math.Abs(X) + Math.Abs(Y) + Math.Abs(Z)) / 3;
+            List<double> result = new List<double>();
+
+            if (Math.Abs(X) > average) result.Add(X);
+            if (Math.Abs(Y) > average) result.Add(Y);
+            if (Math.Abs(Z) > average) result.Add(Z);
+
+            return result.ToArray();
         }
     }
 }

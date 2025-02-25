@@ -1,26 +1,30 @@
-﻿using System;
-
-namespace Classes
+﻿namespace Classes
 {
     public class Calculator26
     {
-        public double MV { get; set; }
-        public double RV { get; set; }
-        public double MS { get; set; }
-        public double RS { get; set; }
-        public double G;
+        public int A { get; set; }
+        public int B { get; set; }
 
-        public Calculator26(double mv, double rv, double ms, double rs)
+        public Calculator26(int a, int b)
         {
-            MV = mv;
-            RV = rv;
-            MS = ms;
-            RS = rs;
-            G = 6.7 * Math.Pow(10, -8);
+            A = a;
+            B = b;
         }
-        public bool CalculateA()
+
+        public int CalculateA()
         {
-            return G * MV / Math.Pow(RV, 2) > G * MS / Math.Pow(RS, 2);
+            return SumDigits(A) + SumDigits(B);
+        }
+
+        private int SumDigits(int number)
+        {
+            int sum = 0;
+            while (number != 0)
+            {
+                sum += number % 10;
+                number /= 10;
+            }
+            return sum;
         }
     }
 }

@@ -5,7 +5,6 @@ using Classes;
 
 namespace Task2.View.Pages
 {
-
     public partial class Task5Page : Page
     {
         public Task5Page()
@@ -15,18 +14,25 @@ namespace Task2.View.Pages
 
         private void BtnTask5_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(TbA.Text) && string.IsNullOrEmpty(TbB.Text) && string.IsNullOrEmpty(TbC.Text))
+            if (string.IsNullOrEmpty(TbA.Text))
             {
-                MessageBox.Show("Нет данных!", "Системное сообщение", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Введите номер месяца", "Системное сообщение", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             else
             {
-                Calculator5 calculator5 = new Calculator5(Convert.ToDouble(TbA.Text), Convert.ToDouble(TbB.Text), Convert.ToDouble(TbC.Text));
-                MessageBox.Show($"Ваши числа после изменения: {calculator5.CalculateA()[0]}, {calculator5.CalculateA()[1]}, {calculator5.CalculateA()[2]}", "Системное сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
+                try
+                {
+                    int month = Convert.ToInt32(TbA.Text);
+                    Calculator5 calculator5 = new Calculator5(month);
+                    string season = calculator5.CalculateA();
+                    MessageBox.Show($"Сезон: {season}", "Системное сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                TbA.Text = string.Empty;
-                TbB.Text = string.Empty;
-                TbC.Text = string.Empty;
+                    TbA.Text = string.Empty;
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Некорректный ввод", "Системное сообщение", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }

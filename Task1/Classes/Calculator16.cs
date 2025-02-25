@@ -16,11 +16,14 @@ namespace Classes
             B = b;
             C = c;
         }
-        public bool CalculateA()
+
+        public string CalculateA()
         {
-            double[] minimum = { A, B, C }; 
-            double p = (A + B + C) / 2;
-            return Math.Sqrt(p*(p - A) * (p - B) * (p-C)) > Math.Pow(Math.Min(Math.Min(A, B), C), 2);
+            double minSide = Math.Min(Math.Min(A, B), C);
+            double triangleArea = 0.25 * Math.Sqrt((A + B + C) * (A + B - C) * (A + C - B) * (B + C - A));
+            double squareArea = minSide * minSide;
+
+            return triangleArea > squareArea ? "Площадь треугольника больше" : "Площадь квадрата больше";
         }
     }
 }

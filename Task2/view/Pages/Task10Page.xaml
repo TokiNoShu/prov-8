@@ -14,7 +14,7 @@
             <StackPanel Orientation="Horizontal">
                 <TextBlock
                    FontSize="18"
-                   FontWeight="Bold" Text="Введите первое число: "/>
+                   FontWeight="Bold" Text="Введите номер темы (1, 2 или 3):         "/>
                 <TextBox Width="70"
                  x:Name="TbA"
                  FontSize="18"/>
@@ -22,22 +22,12 @@
 
             <StackPanel Orientation="Horizontal"
                 Margin="0 10 0 0">
-                <TextBlock Text="Введите второе число: "
+                <TextBlock Text="Введите номер варианта (a, b, или c): "
                    FontSize="18"
                    FontWeight="Bold"/>
                 <TextBox Width="70"
                  x:Name="TbB"
                  FontSize="18"/>
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal"
-    Margin="0 10 0 0">
-                <TextBlock Text="Введите третье число: "
-       FontSize="18"
-       FontWeight="Bold"/>
-                <TextBox Width="70"
-     x:Name="TbC"
-     FontSize="18"/>
             </StackPanel>
 
             <StackPanel>

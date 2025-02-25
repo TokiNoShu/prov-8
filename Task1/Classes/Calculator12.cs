@@ -1,4 +1,29 @@
-﻿namespace Classes
+﻿using System;
+
+namespace Classes
+{
+    public class Calculator12
+    {
+        public double A { get; set; }
+        public double B { get; set; }
+        public double C { get; set; }
+
+        public Calculator12(double a, double b, double c)
+        {
+            A = a;
+            B = b;
+            C = c;
+        }
+
+        public double CalculateA()
+        {
+            return Math.Min(Math.Min(A, B), C);
+        }
+    }
+}
+
+
+/*namespace Classes
 {
     public class Calculator12
     {
@@ -26,4 +51,4 @@
             return minimum;
         }
     }
-}
+}*/

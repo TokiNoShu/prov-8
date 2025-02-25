@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-namespace Classes
+﻿namespace Classes
 {
     public class Calculator6
     {
@@ -8,28 +6,28 @@ namespace Classes
         public double B { get; set; }
         public double C { get; set; }
 
-
         public Calculator6(double a, double b, double c)
         {
             A = a;
             B = b;
             C = c;
         }
+
         public double[] CalculateA()
         {
-            double[] nums = { A, B, C };
             if (A + B + C > 0)
             {
-                for (int i = 0; i < nums.Length; i++)
-                {
-                    nums[i] *= 2;
-                }
+                A *= 2;
+                B *= 2;
+                C *= 2;
             }
-            else for (int i = 0; i < nums.Length; i++)
-                {
-                    nums[i] = 0;
-                }
-            return nums;
+            else
+            {
+                A = 0;
+                B = 0;
+                C = 0;
+            }
+            return new double[] { A, B, C };
         }
     }
 }

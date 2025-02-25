@@ -4,22 +4,24 @@ namespace Classes
 {
     public class Calculator7
     {
-        public double X0 { get; set; }
-        public double Y0 { get; set; }
         public double X1 { get; set; }
         public double Y1 { get; set; }
+        public double X2 { get; set; }
+        public double Y2 { get; set; }
 
-
-        public Calculator7(double x0, double y0, double x1, double y1)
+        public Calculator7(double x1, double y1, double x2, double y2)
         {
-            X0 = x0;
-            Y0 = y0;
             X1 = x1;
             Y1 = y1;
+            X2 = x2;
+            Y2 = y2;
         }
+
         public bool CalculateA()
         {
-            return Math.Abs(X0 + Y0) > Math.Abs(X1 + Y1);
+            double distance1 = Math.Sqrt(X1 * X1 + Y1 * Y1);
+            double distance2 = Math.Sqrt(X2 * X2 + Y2 * Y2);
+            return distance1 > distance2;
         }
     }
 }

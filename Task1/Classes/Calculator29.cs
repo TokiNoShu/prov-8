@@ -4,19 +4,24 @@ namespace Classes
 {
     public class Calculator29
     {
-        public double A { get; set; }
-        public double B { get; set; }
-        public double C;
+        public double Resistance { get; set; }
+        public double Current { get; set; }
 
-        public Calculator29(double a, double b)
+        public Calculator29(double resistance, double current)
         {
-            A = a;
-            B = b;
-            C = B * 3259 * 9461000000000;
+            Resistance = resistance;
+            Current = current;
         }
-        public bool CalculateA()
+
+        public string CalculateA()
         {
-            return A > C;
+            double voltage = 45;
+            double requiredResistance = voltage / Current;
+
+            if (Math.Abs(Resistance - requiredResistance) < 0.1)
+                return "Реостат подходит";
+            else
+                return "Реостат не подходит";
         }
     }
 }

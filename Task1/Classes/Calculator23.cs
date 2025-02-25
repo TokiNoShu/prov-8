@@ -1,20 +1,31 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System;
 
 namespace Classes
 {
     public class Calculator23
     {
-        public double A { get; set; }
-        public double B { get; set; }
+        public int A { get; set; }
+        public int B { get; set; }
+        public int C { get; set; }
 
-        public Calculator23(double a, double b)
+        public Calculator23(int a, int b, int c)
         {
             A = a;
             B = b;
+            C = c;
         }
-        public bool CalculateA()
+
+        public int[] CalculateA()
         {
-            return A > B * 3.6;
+            int binaryNumber = Convert.ToInt32("1101011", 2);
+            List<int> result = new List<int>();
+
+            if (A > binaryNumber) result.Add(A);
+            if (B > binaryNumber) result.Add(B);
+            if (C > binaryNumber) result.Add(C);
+
+            return result.ToArray();
         }
     }
 }
