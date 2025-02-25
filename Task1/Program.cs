@@ -1,6 +1,5 @@
 ﻿using Classes;
 using System;
-using System.Security.Cryptography;
 
 namespace Task1
 {
