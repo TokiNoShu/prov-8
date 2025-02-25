@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 using Task2.Core;
 
@@ -15,7 +14,7 @@ namespace Task2.View.Pages
         {
             int sw = Convert.ToInt32(NumTask.Text);
 
-            SwitchToTask switchtask = new SwitchToTask(sw);
+            SwitchToTask switchtask = new(sw);
             switchtask.SwitchTask();
             NumTask.Clear();
         }
