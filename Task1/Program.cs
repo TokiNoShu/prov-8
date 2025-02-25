@@ -396,13 +396,6 @@ namespace Task1
                     break;
 
                 case 29:
-                    om1 = 5;
-                    om2 = 30;
-                    om3 = 800;
-                    a1 = 2;
-                    a2 = 4;
-                    a3 = 6;
-
                     Calculator29[] calculator29s =
                     {
                         new Calculator29(5, 2),
@@ -418,12 +411,6 @@ namespace Task1
                     break;
 
                 case 30:
-                    x1 = 3.5;
-                    x2 = -0.5;
-                    x3 = 0.72;
-                    y1 = 7.2;
-                    y2 = 1.2;
-                    y3 = -3.12;
                     Calculator30[] calculator30s =
                     {
                         new Calculator30(3.5, 7.2),
